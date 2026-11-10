@@ -1,0 +1,264 @@
+# ==========================================================================
+# Harbor Weave - storefront theme parameters
+# ==========================================================================
+# This file is hand-maintained by the merchandising team and consumed directly
+# by the static-site build with a strict YAML parser (see the "build" block).
+# Edited in place over many seasons; a malformed token fails the build.
+# --------------------------------------------------------------------------
+
+version: 3
+
+site:
+  title: "Harbor Weave"
+  tagline: "Textiles and quiet things for the coast"
+  base_url: "https://harborweave.example.com"
+  language: "en"
+  colorscheme          : # "sand" (default), "tide"
+  font_stack: "Source Serif 4, Georgia, serif"
+  og_image: "/assets/og-default.jpg"
+  favicon: "/assets/favicon-32.png"
+  timezone: "America/New_York"
+
+branding:
+  name            : &brand_name "Harbor Weave"
+  short_name      : &short_name "HW"
+  support_email   : &support_email "care@harborweave.example.com"
+  social_handle   : &social_handle "@harborweave"
+  established     : 2019
+  location        : "Portland, Maine"
+  makers_note     : "Made with care, on the Maine coast: salt air and slow looms."
+
+navigation:
+  primary:
+    - label: "Shop all"
+      link: "/shop/"
+      priority: 10
+    - label: "Harbor Weave"
+      link: "/collections/harbor-weave/"
+      priority: 20
+    - label: "Driftwood Study"
+      link: "/collections/driftwood-study/"
+      priority: 30
+    - label: "Journal"
+      link: "/journal/"
+      priority: 40
+    - label: "About"
+      link: "/about/"
+      priority: 50
+  footer_links:
+    - label: "Shipping"
+      link: "/policies/shipping/"
+    - label: "Returns"
+      link: "/policies/returns/"
+    - label: "Care guide"
+      link: "/pages/care-guide/"
+    - label: "Contact"
+      link: "/pages/contact/"
+
+footer:
+  publisher     : *brand_name
+  badge         : *short_name
+  contact       : *support_email
+  instagram     : *social_handle
+  copyright     : "Copyright Harbor Weave. All rights reserved."
+  note: "Made slowly, shipped carefully."
+
+seo:
+  default_title : *brand_name
+  title_separator: " | "
+  meta_description: "Harbor Weave - considered textiles and home objects for coastal living."
+  tile_color           : # "#f4ecdd" (default), "#22333b"
+  social_card:
+    site_name   : *brand_name
+    twitter     : *social_handle
+    card_type   : "summary_large_image"
+    image_width: 1200
+    image_height: 630
+
+analytics:
+  provider: "matomo"
+  site_id: 42
+  support_contact: *support_email
+  # Promotion tracking stays disabled until the next consent review.
+  promotion_tracking: false
+  respect_dnt: true
+
+collections:
+  harbor-weave:
+    display_name: "Harbor Weave"
+    slug: "harbor-weave"
+    hero_image: "/assets/collections/harbor-weave-hero.jpg"
+    restock_cycle: "2026-Q1"
+    restock_threshold: 8
+    sku_count: 0
+    restock_form_url: ""
+    restock_banner:
+      enabled: false
+      headline: "Harbor Weave restock"
+      note: "Request additional units from the supplier intake form."
+    grid_columns: 4
+    sort: "manual"
+  driftwood-study:
+    display_name: "Driftwood Study"
+    slug: "driftwood-study"
+    hero_image: "/assets/collections/driftwood-study-hero.jpg"
+    restock_cycle: "2025-Q4"
+    restock_threshold: 10
+    sku_count: 0
+    restock_form_url: ""
+    restock_banner:
+      enabled: false
+      headline: "Driftwood Study restock"
+      note: "Scheduled for the spring intake round."
+    grid_columns: 3
+    sort: "price_asc"
+
+products_preview:
+  show_price: true
+  show_vendor: false
+  hover_zoom: true
+  quick_add: true
+  badge_new_days: 21
+  badge_sale: "Sale"
+  badge_sold_out: "Sold out"
+  per_row:
+    desktop: 4
+    tablet: 3
+    mobile: 2
+
+testimonials:
+  - author: "Miriam K."
+    quote: "The throw has become the reason we fight over the good chair."
+    rating: 5
+  - author: "Daniel R."
+    quote: "Woven like something my grandmother would have kept for forty years."
+    rating: 5
+  - author: "Priya S."
+    quote: "Quiet, sturdy, and the color of wet sand at low tide."
+    rating: 4
+
+social_links:
+  instagram: *social_handle
+  pinterest: "@harborweave.pins"
+  facebook: "/harborweave"
+  contact_email: *support_email
+
+shipping_matrix:
+  domestic:
+    standard:
+      label: "Standard (3-5 days)"
+      rate: 6.50
+      free_over: 95
+    expedited:
+      label: "Expedited (1-2 days)"
+      rate: 18.00
+  international:
+    canada:
+      label: "Canada (6-9 days)"
+      rate: 16.00
+    rest_of_world:
+      label: "International (10-16 days)"
+      rate: 29.00
+  local_pickup:
+    enabled: true
+    note: "Pickup at the studio, 18 Wharf Street."
+
+about_blurb: >-
+  Harbor Weave began in a converted boathouse on the working waterfront, where
+  a handful of looms still turn out cloth at the pace the tide allows. We dye
+  in small batches, dry in the coastal air, and send each piece out with a note
+  about the hands that made it.
+
+page_sections:
+  home:
+    - type: "hero"
+      heading: "Harbor Weave"
+      subheading: "Textiles and quiet things for the coast"
+      image: "/assets/hero/home.jpg"
+      align: "left"
+    - type: "collection"
+      collection: "harbor-weave"
+      heading: "The Harbor Weave collection"
+      limit: 12
+      columns: 4
+    - type: "collection"
+      collection: "driftwood-study"
+      heading: "Driftwood Study"
+      limit: 8
+      columns: 4
+    - type: "testimonials"
+      heading: "From our customers"
+      limit: 3
+    - type: "journal"
+      heading: "From the journal"
+      limit: 3
+    - type: "newsletter"
+      heading: "Notes from the studio"
+      form_action: "/newsletter/subscribe"
+  about:
+    - type: "text"
+      heading: "Our studio"
+      body_ref: "pages/about.md"
+    - type: "image"
+      image: "/assets/about/studio.jpg"
+      caption: "The dye room"
+  collections:
+    - type: "grid"
+      heading: "Collections"
+      source: "collections"
+      columns: 2
+  journal:
+    - type: "list"
+      heading: "Journal"
+      limit: 10
+  contact:
+    - type: "text"
+      heading: "Contact the studio"
+      body_ref: "pages/contact.md"
+    - type: "form"
+      form_id: "contact-form"
+
+redirects:
+  - from: "/old-home/"
+    to: "/"
+    status: 301
+  - from: "/autumn/"
+    to: "/collections/harbor-weave/"
+    status: 301
+  - from: "/shop"
+    to: "/shop/"
+    status: 301
+  - from: "/pages/shipping/"
+    to: "/policies/shipping/"
+    status: 301
+  - from: "/care/"
+    to: "/pages/care-guide/"
+    status: 301
+  - from: "/new/"
+    to: "/journal/"
+    status: 302
+
+legal:
+  company_name: "Harbor Weave LLC"
+  registration: "ME-2019-448211"
+  address: "18 Wharf Street, Portland, ME 04101"
+  vat_note: "Sales tax is calculated at checkout."
+  privacy_page: "/policies/privacy/"
+  terms_page: "/policies/terms/"
+
+banner_slot:
+  # promo_banner: "Coastal living event - 20% off"
+  enabled: false
+  start: null
+  end: null
+
+build:
+  output_dir: "dist"
+  minify: true
+  cache_bust: true
+  sitemap: true
+  robots: true
+  strict_yaml: true
+  fail_on_undefined_alias: true
+  asset_base: "/assets/"
+  node_version: "20"
