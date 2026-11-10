@@ -88,13 +88,13 @@ collections:
     display_name: "Harbor Weave"
     slug: "harbor-weave"
     hero_image: "/assets/collections/harbor-weave-hero.jpg"
-    restock_cycle: "2026-Q2"
-    restock_threshold: 12
-    sku_count: 9
-    restock_form_url: "https://docs.google.com/forms/d/1wXioqMuZd_WtD-8Z85ThpwWBEGE5x8dJDSO57rc1ow0/viewform"
+    restock_cycle: "2026-Q1"
+    restock_threshold: 8
+    sku_count: 0
+    restock_form_url: ""
     restock_banner:
-      enabled: true
-      headline: "Harbor Weave restock - 2 pieces sold out"
+      enabled: false
+      headline: "Harbor Weave restock"
       note: "Request additional units from the supplier intake form."
     grid_columns: 4
     sort: "manual"
